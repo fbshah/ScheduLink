@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap';
+@import 'bootstrap/theme';
+
+.spacer {
+  margin-top: 20px;
+}
+
+body{
+  padding-top: 50px;
+}
+.navbar-fixed-top {
+    height: 25px; /* Whatever you want. */
+}
+
+.navbar-default {
+  .navbar-text {
+    color: #008B8B; }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
