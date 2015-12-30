@@ -87,6 +87,6 @@ Rails.application.configure do
       authentication: "plain", # If your mail server requires authentication, you need to specify 
       enable_starttls_auto: true,
       user_name: "frakhandashah@gmail.com",
-      password:  "Mahmood786",
+      password:  "Mahmood786"
 }
 end
