@@ -1,5 +1,3 @@
-
-
 (function() {
   var AbstractChosen, SelectParser, _ref,
     __hasProp = {}.hasOwnProperty,
