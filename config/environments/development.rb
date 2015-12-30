@@ -15,7 +15,6 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -40,5 +39,16 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   #for Devise
-   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+     ActionMailer::Base.smtp_settings = {
+      address: "smtp.gmail.com", #this is you remote mail server, if you do not specify it rails will use 
+      port: 587, # the port at which mail server is running, for local host it is at 25
+      domain: "example.com", # just giving a domain name to you smtp server, you can use any name
+      authentication: "plain", # If your mail server requires authentication, you need to specify 
+      enable_starttls_auto: true,
+      user_name: "frakhandashah@gmail.com",
+      password:  "Mahmood786"
+}
 end
