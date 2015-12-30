@@ -11,6 +11,8 @@ gem 'jbuilder', 			'~> 2.2.3'
 gem 'devise'
 gem 'sdoc', 				'~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
+gem 'mailboxer'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 
 group :development, :test do
   gem 'sqlite3',			'1.3.9'
