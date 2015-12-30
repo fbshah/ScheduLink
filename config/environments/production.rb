@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  config.cache_classes = false
+  config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -76,9 +76,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'desolate-crag-9317.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'intense-shore-7835.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
      ActionMailer::Base.smtp_settings = {
       address: "smtp.gmail.com", #this is you remote mail server, if you do not specify it rails will use 
       port: 587, # the port at which mail server is running, for local host it is at 25
@@ -87,5 +88,7 @@ Rails.application.configure do
       enable_starttls_auto: true,
       user_name: "frakhandashah@gmail.com",
       password:  "Mahmood786"
+      :authentication => :plain,
+      :enable_starttls_auto => true
 }
 end
