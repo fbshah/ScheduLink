@@ -24,5 +24,14 @@ module ScheduLink
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+       ActionMailer::Base.smtp_settings = {
+      address: "smtp.gmail.com", #this is you remote mail server, if you do not specify it rails will use 
+      port: 587, # the port at which mail server is running, for local host it is at 25
+      domain: "example.com", # just giving a domain name to you smtp server, you can use any name
+      authentication: "plain", # If your mail server requires authentication, you need to specify 
+      enable_starttls_auto: true,
+      user_name: "frakhandashah@gmail.com",
+      password:  "Mahmood786"
+}
   end
 end
