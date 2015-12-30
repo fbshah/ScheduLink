@@ -76,11 +76,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'intense-shore-7835.herokuapp.com', :protocol => 'https' }
+  config.action_mailer.default_url_options = { :host => 'intense-shore-7835.herokuapp.com', :protocol => 'http' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-     ActionMailer::Base.smtp_settings = {
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.stmp_settings = {
       address: "smtp.gmail.com", #this is you remote mail server, if you do not specify it rails will use 
       port: 587, # the port at which mail server is running, for local host it is at 25
       domain: "example.com", # just giving a domain name to you smtp server, you can use any name
@@ -88,7 +88,7 @@ Rails.application.configure do
       enable_starttls_auto: true,
       user_name: "frakhandashah@gmail.com",
       password:  "Mahmood786",
-      :authentication => :plain,
-      :enable_starttls_auto => true
+      authentication: plain,
+      enable_starttls_auto: true
 }
 end
