@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -29,7 +29,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -77,4 +77,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { :host => 'desolate-crag-9317.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+     ActionMailer::Base.smtp_settings = {
+      address: "smtp.gmail.com", #this is you remote mail server, if you do not specify it rails will use 
+      port: 587, # the port at which mail server is running, for local host it is at 25
+      domain: "example.com", # just giving a domain name to you smtp server, you can use any name
+      authentication: "plain", # If your mail server requires authentication, you need to specify 
+      enable_starttls_auto: true,
+      user_name: "frakhandashah@gmail.com",
+      password:  "Mahmood786"
+}
 end

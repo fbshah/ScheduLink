@@ -1,12 +1,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
+  # The secret key used by Devise. Devis§e uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '5cbd73a9043094d561a2ac167f3b1aa1cfe433891a42f3a648662927ef43b1ee689733996d18a812098d4ab05058d388fe62e0e650c1ef8db02e957ef8e74cae'
+  config.secret_key = '5cbd73a9043094d561a2ac167f3b1aa1cfe433891a42f3a648662927ef43b1ee689733996d18a812098d4ab05058d388fe62e0e650c1ef8db02e957ef8e74cae'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -158,7 +158,7 @@ Devise.setup do |config|
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
-  # config.lock_strategy = :failed_attempts
+  config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
   # config.unlock_keys = [:email]
@@ -172,7 +172,7 @@ Devise.setup do |config|
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  # config.maximum_attempts = 20
+  config.maximum_attempts = 4
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
