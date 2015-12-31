@@ -29,7 +29,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -76,4 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { :host => 'intense-shore-7835.herokuapp.com', :protocol => 'http' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+     ActionMailer::Base.smtp_settings = {
+      address: "smtp.gmail.com", #this is you remote mail server, if you do not specify it rails will use 
+      port: 587, # the port at which mail server is running, for local host it is at 25
+      domain: "gmail.com", # just giving a domain name to you smtp server, you can use any name
+      authentication: "plain", # If your mail server requires authentication, you need to specify 
+      enable_starttls_auto: true,
+      user_name: "morashid912@gmail.com",
+      password:  "RoRapplication"
+}
 end
