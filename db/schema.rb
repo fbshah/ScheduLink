@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151229222429) do
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
   create_table "users", force: :cascade do |t|
+    t.boolean  "admin"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -86,7 +87,6 @@ ActiveRecord::Schema.define(version: 20151229222429) do
     t.datetime "locked_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "date_of_birth"
