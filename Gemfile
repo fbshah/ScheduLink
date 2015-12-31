@@ -10,7 +10,7 @@ gem 'turbolinks',			'2.3.0'
 gem 'jbuilder', 			'~> 2.2.3'
 gem 'devise'
 gem 'sdoc', 				'~> 0.4.0', group: :doc
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', 		'~> 3.3.6'
 gem 'mailboxer'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 

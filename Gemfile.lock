@@ -203,7 +203,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.6)
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
   compass-rails!

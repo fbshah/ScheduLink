@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 text-center" id="calendar_out">
     <div class="well controls">
       <%= link_to calendar_path(date: @date - 1.month), class: "btn btn-default" do %>
         <i class="glyphicon glyphicon-backward"></i>
@@ -12,7 +12,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12" id="calendar_in">
     <%= calendar @date do |date| %>
       <%= date.day %>  
     <% end %>
