@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  devise_for :admins
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
 
