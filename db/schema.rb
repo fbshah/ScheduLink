@@ -1,4 +1,4 @@
-# encoding: UTF-8
+ # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108122312) do
+ActiveRecord::Schema.define(version: 20160109003933) do
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160108122312) do
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "date_of_birth"
+    t.boolean  "admin"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
