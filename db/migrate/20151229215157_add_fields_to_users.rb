@@ -10,6 +10,5 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :assigned_hours, :int
     add_column :users, :NI, :string
     add_column :users, :work_permit, :string
-    add_column :users, :employee_no, :string
   end
 end

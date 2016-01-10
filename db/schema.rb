@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109003933) do
+ActiveRecord::Schema.define(version: 20160110160556) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -130,12 +130,13 @@ ActiveRecord::Schema.define(version: 20160109003933) do
     t.integer  "assigned_hours"
     t.string   "NI"
     t.string   "work_permit"
-    t.string   "employee_no"
     t.boolean  "admin",                  default: false
+    t.string   "employee_no"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["employee_no"], name: "index_users_on_employee_no", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
 
