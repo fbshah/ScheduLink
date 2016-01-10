@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
     <div class="field">
+      <%= f.label :employee_no %>
+      <%= f.text_field :employee_no, class: "form-control" %>
+    </div>
+
+    <div class="field">
       <%= f.label :first_name %>
       <%= f.text_field :first_name, class: "form-control" %>
     </div>
@@ -13,13 +18,54 @@
       <%= f.text_field :last_name, class: "form-control" %>
     </div>
 
-    <div><%= f.label :date_of_birth %><br />
-        <%= f.date_select :date_of_birth, class: "form-control" %></div>
+    <br/>
+
+    <div class="field">
+        <%= f.label :date_of_birth %><br />
+        <%= f.date_select :date_of_birth, start_year: 100.years.ago.year, end_year: Date.today.year, default: Date.today, class: "form-control" %></div>
+
+        <br/>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
+
+     <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :mobile %>
+      <%= f.text_field :mobile, class: "form-control" %>
+    </div>
+<br/>
+    <div class="field">
+      <%= f.label :contract_type %> <br/>
+      <%= f.select :contract_type, options_for_select(contract_type_options), { prompt: 'Contract Type'} %>
+    </div>
+    <br/>
+
+    <div class="field">
+      <%= f.label :role %>
+      <%= f.text_field :role, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :assigned_hours %>
+      <%= f.number_field :assigned_hours, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :NI %>
+      <%= f.text_field :NI, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :work_permit %>
+      <%= f.text_field :work_permit, class: "form-control" %>
+    </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
