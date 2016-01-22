@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20160110160556) do
     t.integer  "assigned_hours"
     t.string   "NI"
     t.string   "work_permit"
+    t.string   "avatar"
     t.boolean  "admin",                  default: false
     t.string   "employee_no"
   end
