@@ -12,6 +12,7 @@ module ApplicationHelper
     @active == active_page ? "active" : ""
   end
 
+
   def contract_type_options 
 [
       ['Full-time'],
@@ -19,4 +20,6 @@ module ApplicationHelper
       ['On-call']
 ]
   end
+
+
 end

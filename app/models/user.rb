@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
+
     mount_uploader :avatar, AvatarUploader
+
+
+  has_many :shifts
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

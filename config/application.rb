@@ -32,6 +32,8 @@ module ScheduLink
       enable_starttls_auto: true,
       user_name: "frakhandashah@gmail.com",
       password:  "Mahmood786"
-}
+    }
+
+    Time::DATE_FORMATS[:default] = "%d/%m/%Y at %I:%M%p" 
   end
 end

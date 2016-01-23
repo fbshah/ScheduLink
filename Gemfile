@@ -1,6 +1,6 @@
 
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.3'
 gem 'rails', 				'4.2.3'
 gem 'sass-rails', 			'5.0.2'
 gem 'uglifier', 			'2.5.3'
@@ -13,10 +13,14 @@ gem 'sdoc', 				'~> 0.4.0', group: :doc
 gem 'bootstrap-sass', 		'~> 3.3.6'
 gem 'mailboxer'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'figaro'
+
+gem 'jquery-ui-rails'
+
 
 group :development, :test do
   gem 'sqlite3',			'1.3.9'
