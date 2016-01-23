@@ -2,6 +2,7 @@ class CalendarController < ApplicationController
 	before_action :authenticate
   	def show
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+
   	end
 
  private 
@@ -11,3 +12,7 @@ class CalendarController < ApplicationController
   	end
 
 end
+
+  end
+end
+
