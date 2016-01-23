@@ -1,10 +1,11 @@
 class ShiftsController < ApplicationController
-  load_and_authorize_resource
+
   before_filter :authenticate_user!
   before_action :find_shift, only: [:show, :edit, :update, :destroy]
 
   def index 
     @shifts = Shift.all
+    @shifts_by_date = @shifts.group_by(&:date)
     @shifts = @shifts.where(user_id: current_user) 
   end
 
@@ -12,7 +13,7 @@ class ShiftsController < ApplicationController
   end
 
   def new
-    @shift = current_user.shift.build
+    @shift = current_user.shifts.build
   end
 
   def create
@@ -49,7 +50,7 @@ class ShiftsController < ApplicationController
   end
 
   def shift_params
-    params.require(:shift).permit(:start_time, :end_time, :department, :break)
+    params.require(:shift).permit(:date, :start_time, :end_time, :department, :break)
   end
 
 

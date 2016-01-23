@@ -1,0 +1,22 @@
+ <div class = "row text-center">
+	 <div class = "large-6 large-centered columns">
+       <% @shifts.each do |shift| %>
+		<div id = "shifts">
+	  <h2><%=link_to (shift), shift %></h2>
+    </div>
+<% end %>
+  
+<%= calendar do |date| %>
+	<%= date.day %>
+	<% if @shifts_by_date[date] %>
+	<ul>
+		<% @shifts_by_date[date].each do |shift| %>
+			<li><%= link_to shift.date, shift %></li>
+		<% end %>
+		</ul>
+	<% end %>
+<% end %>
+
+
+  <%= link_to 'New Shift', new_shift_path %>
+

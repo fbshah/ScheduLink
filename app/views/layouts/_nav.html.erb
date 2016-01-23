@@ -15,7 +15,7 @@
  
         <% if user_signed_in? %>
         <li><%= link_to "Dashboard" %></li>
-        <li><%= link_to "Rota" %></li>
+        <li><%= link_to "Rota", shifts_path %></li>
         <li><%= link_to "My Calendar", calendar_path %></li>
         <li><%= link_to "Profile", edit_user_registration_path %></li>
         <li><%= link_to "Inbox", mailbox_inbox_path %></li>
