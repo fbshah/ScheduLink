@@ -1,4 +1,4 @@
-CarrierWave.configure do |config|
+=begin CarrierWave.configure do |config|
   config.fog_credentials = { 
       :provider               => 'AWS',
       :aws_access_key_id      => ENV['AWS_ACCESS_KEY_ID'],
@@ -8,3 +8,4 @@ CarrierWave.configure do |config|
   config.cache_dir = "#{Rails.root}/tmp/uploads" 
   config.fog_directory  = ENV['S3_BUCKET']
 end
+=end
