@@ -13,6 +13,5 @@ class CalendarController < ApplicationController
 
 end
 
-  end
-end
+
 

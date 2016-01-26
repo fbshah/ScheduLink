@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160110160556) do
+ActiveRecord::Schema.define(version: 20160122235754) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -47,9 +46,6 @@ ActiveRecord::Schema.define(version: 20160110160556) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-ActiveRecord::Schema.define(version: 20160122235754) do
-
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
