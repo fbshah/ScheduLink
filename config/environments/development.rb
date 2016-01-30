@@ -51,4 +51,5 @@ Rails.application.configure do
       user_name: "frakhandashah@gmail.com",
       password:  "Mahmood786"
 }
+
 end

@@ -90,3 +90,22 @@ footer ul li {
     color: #468847;
     text-align: left;
  }
+ .login-box h2 {
+    color: #008080;
+}
+.login-box input[type="submit"] {
+    color: #fff;
+    background-color: #008080;
+    border: 2px solid #008080;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    text-transform: uppercase;
+}
+.login-box input[type="submit"]:hover {
+    color: #008080;
+    border-color: #008080;
+    background-color: #fff;
+}
