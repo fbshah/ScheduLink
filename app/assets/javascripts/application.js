@@ -10,18 +10,29 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-ui/datepicker
-//= require jquery-ui
-//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
-
-
+//= require jquery.timepicker.js
+//= require jquery-ui/datepicker
+//= require jquery.turbolinks
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
 
-
 $(function() {
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+  	 dateFormat: "yy-mm-dd",
+  	 minDate: '0'
+  });
+ 
 });
+
+$(function(){
+$('.timepicker').timepicker({
+	  datepicker:false,
+  format:'H:i'
+});
+});
+
+

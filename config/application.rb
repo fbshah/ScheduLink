@@ -34,6 +34,6 @@ module ScheduLink
       password:  "Mahmood786"
     }
 
-    Time::DATE_FORMATS[:default] = "%d/%m/%Y at %I:%M%p" 
+    Time::DATE_FORMATS[:default] = "%I:%M %p"
   end
 end

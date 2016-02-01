@@ -1,0 +1,4 @@
+<%= form_for User.new do |f| %>
+	<h1><%= "Add New User" %></h1>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>

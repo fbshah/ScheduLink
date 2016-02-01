@@ -2,20 +2,12 @@ Rails.application.routes.draw do
   
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
-
-
   root 'welcome#index'
   resource :calendar, only: [:show], controller: :calendar
- 
-
-
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :users
- 
-
   devise_for :users
-  resources :shifts
 
+  resources :users, :controller => "users"
+  resources :shifts
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
   get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash

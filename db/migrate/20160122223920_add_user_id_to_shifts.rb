@@ -4,5 +4,5 @@ class AddUserIdToShifts < ActiveRecord::Migration
     add_column :shifts, :user_id, :integer
   end
 
- 
+
 end
