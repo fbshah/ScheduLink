@@ -101,10 +101,10 @@ ActiveRecord::Schema.define(version: 20160122235754) do
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
   create_table "shifts", force: :cascade do |t|
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string   "department"
-    t.string   "break"
+    t.datetime "break"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
