@@ -7,9 +7,9 @@
 		</h2>
   	<%= calendar @date do |date| %>
 			<%= date.day %>
-				<% if @shifts_by_date[date] %> 
+				<% if @shifts_by_date[date] %>
 					<% @shifts_by_date[date].each do |shift| %>
-						<li><b>Start:</b><%= shift.start_time%></li>
+						<li><b>Start:</b><%= shift.start_time %></li>
 						<li><b>End:</b><%= shift.end_time%></li>
 						<li><b>Department:</b><%= shift.department%></li>
 						<li><b>Break:</b><%= shift.break%></li>
