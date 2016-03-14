@@ -5,8 +5,9 @@ class ShiftsController < ApplicationController
 
   def index 
     @shifts = Shift.all
+    @shifts = @shifts.where(user_id: current_user)
     @shifts_by_date = @shifts.group_by(&:date)
-    @shifts = @shifts.where(user_id: current_user) 
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   def show

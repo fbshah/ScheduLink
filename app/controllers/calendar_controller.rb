@@ -1,17 +1,11 @@
-class CalendarController < ApplicationController
-	before_action :authenticate
-  	def show
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+class CalendarController < ActionController::Base
 
-  	end
-
- private 
-
-  	def authenticate
-  	 authenticate_user! && current_user.admin?
-  	end
-
+def show
 end
+<<<<<<< HEAD
 
 
 
+=======
+end
+>>>>>>> upstream/master

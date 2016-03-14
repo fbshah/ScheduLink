@@ -13,13 +13,14 @@ gem 'sdoc', 				'~> 0.4.0', group: :doc
 gem 'bootstrap-sass', 		'~> 3.3.6'
 gem 'mailboxer'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
-
+gem 'jquery-turbolinks'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'figaro'
-
-gem 'jquery-ui-rails'
+gem 'cancancan', '~> 1.10'
+gem 'jquery-ui-rails',    	'5.0.2'
+gem 'jquery-timepicker-rails'
 
 
 group :development, :test do

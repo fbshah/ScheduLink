@@ -1,22 +1,27 @@
- <div class = "row text-center">
-	 <div class = "large-6 large-centered columns">
-       <% @shifts.each do |shift| %>
-		<div id = "shifts">
-	  <h2><%=link_to (shift), shift %></h2>
-    </div>
-<% end %>
-  
-<%= calendar do |date| %>
-	<%= date.day %>
-	<% if @shifts_by_date[date] %>
-	<ul>
-		<% @shifts_by_date[date].each do |shift| %>
-			<li><%= link_to shift.date, shift %></li>
+<div class="row">
+	<div class="col-md-12"  id ="shifts" >
+		<h2 id="week">
+			<%= link_to "<", date: @date.prev_week %>
+			<%= @date.strftime("%B %Y") %>
+			<%= link_to ">", date: @date.next_week%>
+		</h2>
+  	<%= calendar @date do |date| %>
+			<%= date.day %>
+				<% if @shifts_by_date[date] %>
+					<% @shifts_by_date[date].each do |shift| %>
+						<li><b>Start:</b><%= shift.start_time %></li>
+						<li><b>End:</b><%= shift.end_time%></li>
+						<li><b>Department:</b><%= shift.department%></li>
+						<li><b>Break:</b><%= shift.break%></li>
+						<%=link_to 'Edit', shift %>
+					<% end %>
+				<% end %>
 		<% end %>
-		</ul>
-	<% end %>
+	</div>
+</div>
+
+<% if current_user.admin? %>
+  <%= link_to 'New Shift', new_shift_path %>
 <% end %>
 
-
-  <%= link_to 'New Shift', new_shift_path %>
-
+ 
