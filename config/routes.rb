@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :events
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
   root 'welcome#index'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
 
   
   resources :shifts
+
 
   resources :users, :controller => "users"
   resources :shifts

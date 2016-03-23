@@ -21,6 +21,8 @@ gem 'figaro'
 gem 'cancancan', '~> 1.10'
 gem 'jquery-ui-rails',    	'5.0.2'
 gem 'jquery-timepicker-rails'
+gem 'fullcalendar_engine', '~> 1.0', '>= 1.0.6'
+gem 'momentjs-rails'
 
 
 group :development, :test do
