@@ -1,7 +1,21 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Shifts</h1>
-
+<div login-box>
+  <html>
+    <head>
+      <link href='fullcalendar.css' rel='stylesheet' />
+<link href='scheduler.css' rel='stylesheet' />
+<script src='moment.js'></script>
+<script src='jquery.js'></script>
+<script src='fullcalendar.js'></script>
+<script src='scheduler.js'></script>
+</head>
+<h1>Staff Rota</h1>
+<link href='fullcalendar.css' rel='stylesheet' />
+<link href='scheduler.css' rel='stylesheet' />
+<script src='moment.js'></script>
+<script src='jquery.js'></script>
+<script src='fullcalendar.js'></script>
+<script src='scheduler.js'></script>
 <table>
   <thead>
     <tr>
@@ -31,8 +45,11 @@
 <br>
 
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New shift', new_event_path %>
 
 <br> 
 
 <div id="calendar"></div>
+</div>
+  </head>
+</html>

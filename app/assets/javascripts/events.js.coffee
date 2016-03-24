@@ -5,6 +5,16 @@
 $(document).ready ->
   $("#calendar").fullCalendar({
    events: '/events.json'
+  editable: true
+  eventDrop: (event, delta, revertFunc) ->
+    alert event.title + ' was dropped on ' + event.start.format()
+    if !confirm('Are you sure about this change?')
+      revertFunc()
+    return
+    Integer default: 500
+    Float default: .75
+    Boolean default: true
+
    customButtons: myCustomButton:
     text: 'custom!'
     click: ->
@@ -14,5 +24,24 @@ $(document).ready ->
     left: 'prev,next today myCustomButton'
     center: 'title'
     right: 'month,agendaWeek,agendaDay'
-  
+
+  defaultView: 'agendaDay'
+  resources: [
+    {
+      id: 'a'
+      title: 'Brian'
+    }
+    {
+      id: 'b'
+      title: 'Carol'
+    }
+    {
+      id: 'c'
+      title: 'Edwin'
+    }
+    {
+      id: 'd'
+      title: 'Hannah'
+    }
+  ]
   })
