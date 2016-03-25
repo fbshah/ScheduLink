@@ -28,7 +28,7 @@ Things you may want to cover:
 
 * clone the repostiory with <tt>git clone https_url</tt>
 
-* configure new remote upstream<tt>git remote add upstream https_url
+* configure new remote upstream<tt>git remote add upstream https_url</tt>
 
 * run bundle to fetch all libraries <tt>bundle</tt>
 
