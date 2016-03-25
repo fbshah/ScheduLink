@@ -1,28 +1,72 @@
-== README
+== ScheduLink Guide 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a guide which assumes you are part of the project and wish to set up and contribute to ScheduLink.
+
+
+== Dependencies:
+
+* <tt>ruby '2.2.3'</tt>
+
+* <tt>rails '~> 4'</tt>
 
 Things you may want to cover:
 
-* Ruby version
+<tt>devise</tt>
 
-* System dependencies
+<tt>paperclip</tt>
 
-* Configuration
+<tt>cancan</tt>
 
-* Database creation
+<tt>rmagick</tt>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<tt>jquery</tt>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Set up:
+
+* fork the application
+
+* clone the repostiory with <tt>git clone https_url</tt>
+
+* configure new remote upstream<tt>git remote add upstream https_url</tt>
+
+* run bundle to fetch all libraries <tt>bundle</tt>
+
+* migrate the database <tt>rake db:migrate</tt>
+
+* switch to a new branch <tt>git checkout -b name_of_new_branch</tt>
+
+* start the rails server <tt>rails s</tt>
+
+
+== Create admin user:
+
+Assuming you have just created and activated your first users account. Make them an Admin by:
+
+* run rails console  <tt>rails c</tt>
+
+* <tt>u = User.first</tt>
+
+* <tt>u.role = "admin"</tt>
+
+* <tt>u.save</tt> from here on forth, you can now do everything as admin including create, edit user and setting their roles from the 'Users' page.
+
+
+== Contributing:
+
+* add and commit your changes <tt>git commit -a -m "Add first draft of some feature"</tt>
+
+* fetch the upstream <tt>git pull upstream master</tt>  
+
+* push your feature branch to your local repository <tt>git push origin name_of_branch</tt>
+
+* send pull request through main github repository by comparing <tt>name_of_branch</tt> and <tt>master</tt>
+
+
+== Tests:
+
+* run the current test suite with <tt>bundle exec rake test</tt>
+
+
+
+
