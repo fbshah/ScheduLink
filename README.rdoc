@@ -47,7 +47,7 @@ Assuming you have just created and activated your first users account. Make them
 
 * <tt>u = User.first</tt>
 
-* <tt>u.role = admin</tt>
+* <tt>u.role = "admin"</tt>
 
 * <tt>u.save</tt> from here on forth, you can now do everything as admin including create, edit user and setting their roles from the 'Users' page.
 
