@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 $(document).ready ->
   $("#calendar").fullCalendar({
    events: '/events.json'
@@ -23,7 +24,25 @@ $(document).ready ->
   header:
     left: 'prev,next today myCustomButton'
     center: 'title'
-    right: 'resourceDay,month,agendaWeek,agendaDay'
-      defaultView: 'agendaDay'
+    right: 'month,agendaWeek,agendaDay'
 
+  defaultView: 'agendaDay'
+  resources: [
+    {
+      id: 'a'
+      title: 'Brian'
+    }
+    {
+      id: 'b'
+      title: 'Carol'
+    }
+    {
+      id: 'c'
+      title: 'Edwin'
+    }
+    {
+      id: 'd'
+      title: 'Hannah'
+    }
+  ]
   })
