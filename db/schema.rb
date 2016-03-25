@@ -11,7 +11,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125000156) do
+ActiveRecord::Schema.define(version: 20160322194035) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",        default: 0,  null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
+
+  create_table "calendars", force: :cascade do |t|
+    t.string   "title"
+    t.text     "department"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "mobile",     null: false
+    t.string   "address",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "department"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fullcalendar_engine_event_series", force: :cascade do |t|
+    t.integer  "frequency",  default: 1
+    t.string   "period",     default: "monthly"
+    t.datetime "starttime"
+    t.datetime "endtime"
+    t.boolean  "all_day",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fullcalendar_engine_events", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "starttime"
+    t.datetime "endtime"
+    t.boolean  "all_day",         default: false
+    t.text     "description"
+    t.integer  "event_series_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fullcalendar_engine_events", ["event_series_id"], name: "index_fullcalendar_engine_events_on_event_series_id"
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -67,14 +142,14 @@ ActiveRecord::Schema.define(version: 20160125000156) do
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
   create_table "shifts", force: :cascade do |t|
-    t.date     "date"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "department"
-    t.string   "break"
+    t.datetime "break"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.datetime "date"
   end
 
   create_table "users", force: :cascade do |t|

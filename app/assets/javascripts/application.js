@@ -17,6 +17,7 @@
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require fullcalendar_engine/application
 //= require_tree .
 
 
@@ -35,4 +36,4 @@ $('.timepicker').timepicker({
 });
 });
 
-
+//= require fullcalendar_engine/application

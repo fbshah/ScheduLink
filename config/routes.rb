@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
   
+  resources :events
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
   root 'welcome#index'
   resource :calendar, only: [:show], controller: :calendar
-  devise_for :users
+
+ 
+
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users
+ 
+
+  
+  resources :shifts
+
 
   resources :users, :controller => "users"
   resources :shifts

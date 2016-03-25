@@ -9,14 +9,18 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
+ 
 
  *= require jquery-ui/datepicker
  *= require jquery.timepicker.css
  *= require_self
  *= require_tree .
- */
-@import "bootstrap-sprockets";
+ *= require fullcalendar_engine/application
+  *= require fullcalendar_engine/application
+*/
+
 @import "bootstrap";
+@import "bootstrap-sprockets";
 @import 'bootstrap/theme';
 @import "global.css.scss";
 @import "calendar.css.scss";
@@ -28,7 +32,9 @@
 @import "shifts.css.scss";
 
 
-
+.login-box h1 {
+    color: #008080;
+}
 .spacer {
   margin-top: 20px;
 }
@@ -37,15 +43,17 @@ body{
   padding-top: 50px;
 }
 .navbar-fixed-top {
-    height: 25px; /* Whatever you want. */
+    height: 25px; /* Whatever you want.  *= require fullcalendar_engine/application
+*/
 }
 
 .navbar-default {
   .navbar-text {
     color: #008B8B; }
-}
+} 
 
-/* footer */
+/* footer  *= require fullcalendar_engine/application
+*/
 
 .footer {
    position:fixed;
@@ -79,7 +87,8 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
-/*flash*/
+/*flash *= require fullcalendar_engine/application
+*/
 .alert-error {
     background-color: #f2dede;
     border-color: #eed3d7;
