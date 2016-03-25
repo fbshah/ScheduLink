@@ -1,14 +1,15 @@
-= H1 ScheduLink Guide 
+== ScheduLink Guide 
 
-This README assumes you are part of the project and wish to contribute.
+This is a guide which assumes you are part of the project and wish to set up and contribute to ScheduLink.
 
-== H2 Dependencies:
 
-*<tt>ruby '2.2.3'</tt>
+== Dependencies:
 
-*<tt>rails '~> 4'</tt>
+* <tt>ruby '2.2.3'</tt>
 
-Things you may wish to cover:
+* <tt>rails '~> 4'</tt>
+
+Things you may want to cover:
 
 <tt>devise</tt>
 
@@ -21,13 +22,13 @@ Things you may wish to cover:
 <tt>jquery</tt>
 
 
-== H2 Set up:
+== Set up:
 
 * fork the application
 
-* clone the repostiory with <tt>git clone https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</tt>
+* clone the repostiory with <tt>git clone https_url</tt>
 
-* Configure new remote upstream<tt>git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</tt>
+* configure new remote upstream<tt>git remote add upstream https_url
 
 * run bundle to fetch all libraries <tt>bundle</tt>
 
@@ -38,21 +39,32 @@ Things you may wish to cover:
 * start the rails server <tt>rails s</tt>
 
 
+== Create admin user:
+
+Assuming you have just created and activated your first users account. Make them an Admin by:
+
+* run rails console  <tt>rails c</tt>
+
+* <tt>u = User.first</tt>
+
+* <tt>u.role = admin</tt>
+
+* <tt>u.save</tt> from here on forth, you can now do everything as admin including create, edit user and setting their roles from the 'Users' page.
 
 
-== H2 Contributing:
+== Contributing:
 
 * add and commit your changes <tt>git commit -a -m "Add first draft of some feature"</tt>
 
-* Fetch the upstream <tt>git pull upstream master</tt>  
+* fetch the upstream <tt>git pull upstream master</tt>  
 
 * push your feature branch to your local repository <tt>git push origin name_of_branch</tt>
 
 * send pull request through main github repository by comparing <tt>name_of_branch</tt> and <tt>master</tt>
 
 
+== Tests:
 
-== H2 Tests:
 * run the current test suite with <tt>bundle exec rake test</tt>
 
 
