@@ -1,28 +1,60 @@
-== README
+= H1 ScheduLink Guide 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README assumes you are part of the project and wish to contribute.
 
-Things you may want to cover:
+== H2 Dependencies:
 
-* Ruby version
+*<tt>ruby '2.2.3'</tt>
 
-* System dependencies
+*<tt>rails '~> 4'</tt>
 
-* Configuration
+Things you may wish to cover:
 
-* Database creation
+<tt>devise</tt>
 
-* Database initialization
+<tt>paperclip</tt>
 
-* How to run the test suite
+<tt>cancan</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+<tt>rmagick</tt>
 
-* Deployment instructions
-
-* ...
+<tt>jquery</tt>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== H2 Set up:
+
+* fork the application
+
+* clone the repostiory with <tt>git clone https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</tt>
+
+* Configure new remote upstream<tt>git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</tt>
+
+* run bundle to fetch all libraries <tt>bundle</tt>
+
+* migrate the database <tt>rake db:migrate</tt>
+
+* switch to a new branch <tt>git checkout -b name_of_new_branch</tt>
+
+* start the rails server <tt>rails s</tt>
+
+
+
+
+== H2 Contributing:
+
+* add and commit your changes <tt>git commit -a -m "Add first draft of some feature"</tt>
+
+* Fetch the upstream <tt>git pull upstream master</tt>  
+
+* push your feature branch to your local repository <tt>git push origin name_of_branch</tt>
+
+* send pull request through main github repository by comparing <tt>name_of_branch</tt> and <tt>master</tt>
+
+
+
+== H2 Tests:
+* run the current test suite with <tt>bundle exec rake test</tt>
+
+
+
+

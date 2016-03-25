@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
-  ROLES = %w[admin user]
+  ROLES = %w[admin slc]
   has_many :shifts
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
-  def index 
+  def index
     @users = User.all
   end
 
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 private
 
  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :role)
   end
 
 end

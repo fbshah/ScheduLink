@@ -15,9 +15,12 @@
  
         <% if user_signed_in? %>
         Welcome , <%= current_user.full_name %>
-        <li><%= link_to "Dashboard" %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <% if can? :manage, :all %>
+          <li><%= link_to "Users", users_path %></li>
+        <% end %>
         <li><%= link_to "Rota", shifts_path %></li>
-        <li><%= link_to "My Calendar", calendar_path %></li>
+        <li><%= link_to "Availabilty", calendar_path %></li>
         <li><%= link_to "Profile", edit_user_registration_path %></li>
         <li><%= link_to "Inbox", mailbox_inbox_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>

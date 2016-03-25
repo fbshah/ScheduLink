@@ -9,11 +9,10 @@
 <p><%= f.label :password_confirmation %><br />
 <%= f.password_field :password_confirmation %></p>
 
-<% if can? :manage, @users %>
+<% if can? :manage, :all %>
 
 <p><%= f.label :role %>
 <p>
  <%= f.collection_select :role, User::ROLES, :to_s, :humanize, {:include_blank => true} %></p>
-<% end %>
-
 <p><%= f.submit "Submit" %></p>
+<% end %>
