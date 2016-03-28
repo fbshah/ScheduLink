@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322194035) do
+ActiveRecord::Schema.define(version: 20160328013334) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20160322194035) do
     t.string   "avatar"
     t.boolean  "admin",                  default: false
     t.string   "employee_no"
+    t.boolean  "approved",               default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

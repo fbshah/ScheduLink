@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  get 'users/:id/shifts' => 'users#shifts', :as => :user_shifts
   resources :events
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :shifts
   resources :calendar
-  get 'calendar' => 'calendar#shifts'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
