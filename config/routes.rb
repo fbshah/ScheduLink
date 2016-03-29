@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   get 'faq' => 'static_pages#faq'
   root 'welcome#index'
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
-
   resource :calendar, only: [:show], controller: :calendar
 
  
