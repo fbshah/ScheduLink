@@ -4,8 +4,8 @@ load_and_authorize_resource
   before_action :find_shift, only: [:show, :edit, :update, :destroy]
 
   def index 
-    @shifts = Shift.all
-    @shifts = @shifts.where(user_id: current_user)
+    @shifts = current_user.shifts
+    @shift = Shift.new
     @shifts_by_date = @shifts.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
@@ -18,7 +18,7 @@ load_and_authorize_resource
   end
 
   def create
-    @shift = current_user.shifts.build(shift_params)
+    @shift = current_user.shifts.new(shift_params)
     if @shift.save
     redirect_to @shift
   else

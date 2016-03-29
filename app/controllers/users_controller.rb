@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def shifts
+    @user = User.find(params[:id])
+    @shifts = @user.shifts
+  end
+
   def show
     @user = User.find(params[:id])
   end
