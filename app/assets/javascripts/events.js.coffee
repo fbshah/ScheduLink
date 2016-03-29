@@ -24,8 +24,7 @@ $(document).ready ->
   header:
     left: 'prev,next today myCustomButton'
     center: 'title'
-    right: 'month,agendaWeek,agendaDay'
-
+    right: 'resourceDay,month,agendaWeek,agendaDay'
   defaultView: 'agendaDay'
   resources: [
     {

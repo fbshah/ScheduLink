@@ -4,7 +4,15 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
   root 'welcome#index'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
+
+  resource :calendar, only: [:show], controller: :calendar
+
+ 
+
+  devise_for :users, :controllers => {:registrations => "users/registrations" }
+
   resources :users
   resources :users, :controller => "users"
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
