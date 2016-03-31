@@ -23,13 +23,13 @@ class ApplicationController < ActionController::Base
   protected
   
   def user_params
-  params.require(:user).permit(:employee_no, :first_name, :last_name, :date_of_birth, :email, :address, :mobile, :contract_type, :role, :ni, :work_permit, :password, :password_confirmation, :current_password) 
+  params.require(:user).permit(:employee_no, :first_name, :last_name, :date_of_birth, :email, :address, :mobile, :contract_type, :role, :NI, :work_permit, :password, :password_confirmation, :current_password) 
 end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :first_name, :last_name, :email, :password, :remember_me) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:login, :password, :password_confirmation, :current_password) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:employee_no, :first_name, :last_name, :date_of_birth, :email, :address, :mobile, :contract_type, :role, :NI, :work_permit, :password, :password_confirmation, :current_password) }
   end
 
 
