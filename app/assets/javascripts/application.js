@@ -20,7 +20,6 @@
 //= require fullcalendar_engine/application
 //= require moment
 //= require_tree .
-//= require fullcalendar_engine/application
 
 $(function() {
   $('.datepicker').datepicker({
