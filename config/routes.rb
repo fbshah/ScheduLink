@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   
-  resources :events
+    resources :events do
+    collection do
+      get :get_events
+    end
+    member do
+      post :move
+      post :resize
+    end
+  end
+  
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
   root 'welcome#index'
