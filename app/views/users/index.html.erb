@@ -1,9 +1,12 @@
  <% @users.each do |user| %>
-    <p> <%= link_to user.first_name  %> 
+    <p> <%= link_to user.first_name, user_shifts_path(user)  %> 
     	<%= link_to "Edit User", edit_user_path(user), :class => "button tiny" %> 
     	<%= link_to "Delete User", user, :confirm => "Are you sure?", :method => :delete, :class => "button tinyred" %>
 
 <% end %>
+
+
+
 <%= link_to 'Add User', new_user_path, :class => "button tinyblue" %> 
 
   
