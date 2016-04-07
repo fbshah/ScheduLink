@@ -18,7 +18,6 @@ class ConversationsController < ApplicationController
     conversation.mark_as_read(current_user)
   end
 
-
   def reply
     current_user.reply_to_conversation(conversation, message_params[:body])
     flash[:notice] = "Your reply message was successfully sent!"
