@@ -1,21 +1,20 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-mynav">
   <div class="container-fluid">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
       </button>
-       <%= link_to "ScheduLink", root_path, class: "navbar-brand" %>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav pull-right">
 
- 
+
+       <a class="navbar-brand"> 
+        <%= link_to "ScheduLink", root_path, class: "navbar-brand" %> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
         Welcome , <%= current_user.full_name %>
-        <li><%= link_to "Home", root_path %></li>
         <% if can? :manage, :all %>
           <li><%= link_to "Users", users_path %></li>
         <% end %>
@@ -37,4 +36,4 @@
     </div>
   </div>
 </nav>
-
+ 

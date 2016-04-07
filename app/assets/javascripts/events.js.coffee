@@ -5,6 +5,7 @@
 
 $(document).ready ->
   $("#calendar").fullCalendar({
+  
    events: '/events.json'
   editable: true
   eventDrop: (event, delta, revertFunc) ->
@@ -15,7 +16,14 @@ $(document).ready ->
     Integer default: 500
     Float default: .75
     Boolean default: true
+    timeFormat: 'h:mm t{ - h:mm t} ',
+    dragOpacity: "0.5"
 
+    eventDrop: (event, dayDelta, minuteDelta, allDay, revertFunc) ->
+      updateEvent(event);
+
+    eventResize: (event, dayDelta, minuteDelta, revertFunc) ->
+      updateEvent(event);
    customButtons: myCustomButton:
     text: 'custom!'
     click: ->
@@ -26,6 +34,7 @@ $(document).ready ->
     center: 'title'
     right: 'resourceDay,month,agendaWeek,agendaDay'
   defaultView: 'agendaDay'
+  default: 'Resources'
   resources: [
     {
       id: 'a'
@@ -44,4 +53,6 @@ $(document).ready ->
       title: 'Hannah'
     }
   ]
+
+
   })

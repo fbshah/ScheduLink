@@ -32,26 +32,6 @@
 @import "shifts.css.scss";
 
 
-.login-box h1 {
-    color: #008080;
-}
-.spacer {
-  margin-top: 20px;
-}
-
-body{
-  padding-top: 50px;
-}
-.navbar-fixed-top {
-    height: 25px; /* Whatever you want.  *= require fullcalendar_engine/application
-*/
-}
-
-.navbar-default {
-  .navbar-text {
-    color: #008B8B; }
-} 
-
 /* footer  *= require fullcalendar_engine/application
 */
 
@@ -116,3 +96,57 @@ footer ul li {
     color: #468847;
     text-align: left;
  }
+
+
+
+.navbar-collapse.collapse {
+
+    background-color: #3366CC;
+    color: #FFFFFF;
+}
+
+.container-fluid .navbar-brand {
+  color: #FFFFFF;
+}
+
+
+nav.navbar-nav.navbar-right li a:hover{
+  color: #3366CC;
+}
+
+
+.navbar-mynav{
+color: #FFFFFF;
+}
+
+.navbar-nav>li>a{
+color: #FFFFFF;
+}
+
+
+.navbar-collapse.collapse, a{
+color: #FFFFFF;
+}
+
+
+
+.nav.navbar-nav.pull-right, a{
+color: #FFFFFF;
+}
+.navbar-default .navbar-mynav>li>a {
+    color: #FFFFFF;
+}
+
+
+ .nav.navbar-nav.navbar-right li a {
+    color: white;
+}
+.nav.navbar-nav.navbar-right li a:after {
+color:black;
+}
+
+  
+
+.nav.navbar-nav.navbar-right li a:hover{
+  color: #3366CC;
+}
