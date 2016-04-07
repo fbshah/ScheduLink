@@ -88,7 +88,7 @@ devise_for :users, :controllers => {:registrations => "users/registrations" }
   #       get 'recent', on: :collection
   #     end
   #   end
->>>>>>> availability
+
 
 
 end
