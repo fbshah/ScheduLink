@@ -32,11 +32,6 @@
 @import "shifts.css.scss";
 
 
-
-.spacer {
-  margin-top: 20px;
-}
-
 /* footer  *= require fullcalendar_engine/application
 */
 
@@ -115,18 +110,15 @@ footer ul li {
 }
 
 
-a:visited{
-  color: #FFFFFF;
+nav.navbar-nav.navbar-right li a:hover{
+  color: #3366CC;
 }
 
 
 .navbar-mynav{
 color: #FFFFFF;
 }
-.navbar-nav{
-color: #FFFFFF;
 
-}
 .navbar-nav>li>a{
 color: #FFFFFF;
 }
@@ -135,6 +127,7 @@ color: #FFFFFF;
 .navbar-collapse.collapse, a{
 color: #FFFFFF;
 }
+
 
 
 .nav.navbar-nav.pull-right, a{
@@ -148,9 +141,12 @@ color: #FFFFFF;
  .nav.navbar-nav.navbar-right li a {
     color: white;
 }
+.nav.navbar-nav.navbar-right li a:after {
+color:black;
+}
 
-.nav.navbar-default ul li a:hover { 
-  color: #000; 
-  background-color: #fff; 
-  } 
   
+
+.nav.navbar-nav.navbar-right li a:hover{
+  color: #3366CC;
+}
