@@ -1,5 +1,6 @@
 
 <%= form_for @shift do |f| %>
+<%= @shift.errors.full_messages.first if @shift.errors.any? %>
     <div class="field">
     <%= f.label :date %><br>
     <%= f.text_field :date, class: "datepicker"%>
@@ -20,6 +21,10 @@
     <%= f.label :break%><br>
     <%= f.text_field :break%>
 
+  </div>
+  <div class="field">
+    <%= f.label :user%><br>
+    <%= f.select(:user_id, User.all.collect {|p| [ p.first_name, p.id ] }, {include_blank: false}) %>
   </div>
 
   <div class="actions">
