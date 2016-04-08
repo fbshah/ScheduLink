@@ -34,6 +34,11 @@
 /* footer  *= require fullcalendar_engine/application
 */
 
+.container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color: #3366CC;
+}
 .footer {
    position:fixed;
    left:0px;
@@ -136,6 +141,9 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
+.navbar-mynav .navbar-toggle {
+    border-color: #ddd;
+}
 
  .nav.navbar-nav.navbar-right li a {
     color: white;

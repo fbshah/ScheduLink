@@ -1,7 +1,7 @@
 module CalendarHelper
 #creare shiftcalendar helper method called in view template
 def calendar(date = Date.today, &block)
-	Calendar.new(self, date, block).table 
+  Calendar.new(self, date, block).table 
 end
 #all the logic that goes inside the helper 
 class Calendar < Struct.new(:view, :date, :callback)
@@ -17,7 +17,7 @@ class Calendar < Struct.new(:view, :date, :callback)
     end
  
     def header
-      content_tag :tr do
+      content_tag :tr, class: 'hiderow' do
         HEADER.map { |day| content_tag :th, day }.join.html_safe
       end
     end

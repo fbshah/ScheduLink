@@ -58,13 +58,17 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
 .calendar {
   td, th {
   display: block; 
   padding: .6rem;
 }
+}
+
+.hiderow{
+  display:none;
 }
 
 th td:first-child { 
@@ -91,8 +95,6 @@ li{
   td {
   display: block; 
   padding: .6rem;
-
-
   }
 
   }
