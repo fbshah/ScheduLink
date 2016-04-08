@@ -16,7 +16,9 @@
 						<li><b>End:</b><%= shift.end_time%></li>
 						<li><b>Department:</b><%= shift.department%></li>
 						<li><b>Break:</b><%= shift.break%></li>
+						<% if can? :manage, :all %>
 						<%=link_to 'Edit', shift %>
+						<% end %>
 					<% end %>
 				<% end %>
 			<% end %>
