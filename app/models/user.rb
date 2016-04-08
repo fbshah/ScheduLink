@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
   ROLES = %w[admin slc staff]
+  def role?(role)
+    return !!self.roles.find_by_name(role.to_s.camelize)
+  end
   has_many :shifts
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
