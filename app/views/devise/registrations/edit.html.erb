@@ -4,18 +4,6 @@
   <%= devise_error_messages! %>
 
   <%= form_for @user, html: { multipart: true } do |f| %>
-  <p>
-    <label>My Avatar</label>
-    <%= image_tag(@user.avatar_url) if @user.avatar? %>
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
-  </p>
-  <p>
-    <label>
-      <%= f.check_box :remove_avatar %>
-      Remove avatar
-    </label>
-  </p>
 
     <div class="field">
       <%= f.label :employee_no %>

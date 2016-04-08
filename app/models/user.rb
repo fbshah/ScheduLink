@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   attr_accessor :login
   ROLES = %w[admin slc staff]
   has_many :shifts
-  mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 
