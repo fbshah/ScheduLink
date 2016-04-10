@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>ScheduLink</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "https://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
   <%= javascript_include_tag "https://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
@@ -12,18 +13,12 @@
 <body>
 
 <%= render 'layouts/nav' %>
-
-
-
-
-
-
 <div class="container">
-	    <%= render 'layouts/messages' %>
+<%= render 'layouts/messages' %>
 
 <%= yield %>
-<%= render 'layouts/footer' %>
 
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

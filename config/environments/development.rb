@@ -5,6 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+  config.assets.compile = true
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -48,8 +49,8 @@ Rails.application.configure do
       domain: "example.com", # just giving a domain name to you smtp server, you can use any name
       authentication: "plain", # If your mail server requires authentication, you need to specify 
       enable_starttls_auto: true,
-      user_name: "frakhandashah@gmail.com",
-      password:  "Mahmood786"
+      user_name: "rashidrubyrails@gmail.com",
+      password:  "password77"
 }
 
 end

@@ -76,7 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'intense-shore-7835.herokuapp.com', :protocol => 'http' }
+  config.action_mailer.default_url_options = { :host => 'intense-sierra-39639.herokuapp.com', :protocol => 'http' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -86,7 +86,7 @@ Rails.application.configure do
       domain: "gmail.com", # just giving a domain name to you smtp server, you can use any name
       authentication: "plain", # If your mail server requires authentication, you need to specify 
       enable_starttls_auto: true,
-      user_name: "morashid912@gmail.com",
-      password:  "RoRapplication"
+      user_name: "rashidrubyrails@gmail.com",
+      password:  "password77"
 }
 end

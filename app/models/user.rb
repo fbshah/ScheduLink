@@ -3,11 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
   ROLES = %w[admin slc staff]
+  def role?(role)
+    return !!self.roles.find_by_name(role.to_s.camelize)
+  end
   has_many :shifts
-  mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
-
+has_many :events
  def full_name
    return first_name + " " + last_name 
   end 

@@ -16,7 +16,6 @@
  *= require_self
  *= require_tree .
  *= require fullcalendar_engine/application
-  *= require fullcalendar_engine/application
 */
 
 @import "bootstrap";
@@ -32,14 +31,14 @@
 @import "shifts.css.scss";
 
 
-
-.spacer {
-  margin-top: 20px;
-}
-
 /* footer  *= require fullcalendar_engine/application
 */
 
+.container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color: #3366CC;
+}
 .footer {
    position:fixed;
    left:0px;
@@ -115,18 +114,15 @@ footer ul li {
 }
 
 
-a:visited{
-  color: #FFFFFF;
+nav.navbar-nav.navbar-right li a:hover{
+  color: #3366CC;
 }
 
 
 .navbar-mynav{
 color: #FFFFFF;
 }
-.navbar-nav{
-color: #FFFFFF;
 
-}
 .navbar-nav>li>a{
 color: #FFFFFF;
 }
@@ -137,6 +133,7 @@ color: #FFFFFF;
 }
 
 
+
 .nav.navbar-nav.pull-right, a{
 color: #FFFFFF;
 }
@@ -144,13 +141,19 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
+.navbar-mynav .navbar-toggle {
+    border-color: #ddd;
+}
 
  .nav.navbar-nav.navbar-right li a {
     color: white;
 }
+.nav.navbar-nav.navbar-right li a:after {
+color:black;
+}
 
-.nav.navbar-default ul li a:hover { 
-  color: #000; 
-  background-color: #fff; 
-  } 
   
+
+.nav.navbar-nav.navbar-right li a:hover{
+  color: #3366CC;
+}

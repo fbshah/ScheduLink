@@ -30,8 +30,8 @@ module ScheduLink
       domain: "example.com", # just giving a domain name to you smtp server, you can use any name
       authentication: "plain", # If your mail server requires authentication, you need to specify 
       enable_starttls_auto: true,
-      user_name: "frakhandashah@gmail.com",
-      password:  "Mahmood786"
+      user_name: "rashidrubyrails@gmail.com",
+      password:  "password77"
     }
 
     Time::DATE_FORMATS[:default] = "%I:%M %p"

@@ -21,7 +21,6 @@
 //= require moment
 //= require_tree .
 
-
 $(function() {
   $('.datepicker').datepicker({
   	 dateFormat: "yy-mm-dd",
@@ -37,4 +36,4 @@ $('.timepicker').timepicker({
 });
 });
 
-//= require fullcalendar_engine/application
+

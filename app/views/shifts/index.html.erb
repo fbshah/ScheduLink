@@ -5,17 +5,23 @@
 			<%= @date.strftime("%B %Y") %>
 			<%= link_to ">", date: @date.next_week%>
 		</h2>
-  	<%= calendar @date do |date| %>
-			<%= date.day %>
+		<% @shifts.group_by(&:user).each do |user, shifts| %>
+			<%= shifts.first.user.first_name %>
+		  	<%= calendar @date do |date| %>
+				<%= date.day %>
+				<% @shifts_by_date = shifts.group_by(&:date)%>
 				<% if @shifts_by_date[date] %>
 					<% @shifts_by_date[date].each do |shift| %>
 						<li><b>Start:</b><%= shift.start_time %></li>
 						<li><b>End:</b><%= shift.end_time%></li>
 						<li><b>Department:</b><%= shift.department%></li>
 						<li><b>Break:</b><%= shift.break%></li>
+						<% if can? :manage, :all %>
 						<%=link_to 'Edit', shift %>
+						<% end %>
 					<% end %>
 				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 </div>
