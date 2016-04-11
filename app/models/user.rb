@@ -9,11 +9,11 @@ class User < ActiveRecord::Base
   end
   has_many :shifts
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,  :lockable  #:confirmable,
+         :recoverable, :rememberable, :trackable, :validatable,  :lockable, :confirmable
 
  def full_name
    return first_name + " " + last_name 
-  end 
+end 
 
  acts_as_messageable
 
