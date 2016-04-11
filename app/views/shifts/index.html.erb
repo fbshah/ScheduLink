@@ -10,7 +10,7 @@
 		  	<%= calendar @date do |date| %>
 				<%= date.day %>
 				<% @shifts_by_date = shifts.group_by(&:date)%>
-				<% if shifts_by_date[date] %>
+				<% if @shifts_by_date[date] %>
 					<% @shifts_by_date[date].each do |shift| %>
 						<li><b>Start:</b><%= shift.start_time %></li>
 						<li><b>End:</b><%= shift.end_time%></li>
