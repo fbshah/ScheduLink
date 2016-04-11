@@ -14,5 +14,8 @@
 <p><%= f.label :role %>
 <p>
  <%= f.collection_select :role, User::ROLES, :to_s, :humanize, {:include_blank => true} %></p>
+ <p><%= f.label :assigned_hours %>
+ 	<p>
+ <%= f.collection_select :assigned_hours, User::HOURS, :to_s, :humanize, {:include_blank => true} %></p>
 <p><%= f.submit "Submit" %></p>
 <% end %>
