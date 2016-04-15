@@ -8,4 +8,8 @@ class Shift < ActiveRecord::Base
 			errors.add(:end_time, "minimum two hour shift")
 		end
 	end
+
+	def hours
+		Time.diff(start_time, end_time)[:hour]
+	end
 end

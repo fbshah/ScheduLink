@@ -3,16 +3,22 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
   ROLES = %w[admin slc staff]
+  HOURS = %w[5 10 15 20 30]
   def role?(role)
     return !!self.roles.find_by_name(role.to_s.camelize)
   end
   has_many :shifts
   devise :database_authenticatable, :registerable,
+<<<<<<< HEAD
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 has_many :events
+=======
+         :recoverable, :rememberable, :trackable, :validatable,  :lockable, :confirmable
+
+>>>>>>> upstream/master
  def full_name
    return first_name + " " + last_name 
-  end 
+end 
 
  acts_as_messageable
 
@@ -23,4 +29,10 @@ has_many :events
   def mailboxer_email(object)
     self.email
   end
+
+  def remaining_hours
+      assigned_hours.to_i - shifts.map {|s| s.hours}.inject(0, :+)
+  end
+
+
 end
