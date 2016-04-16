@@ -12,13 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
+//= require fullcalendar
 //= require jquery.timepicker.js
 //= require jquery-ui/datepicker
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require fullcalendar_engine/application
-//= require moment
 //= require_tree .
 
 $(function() {
