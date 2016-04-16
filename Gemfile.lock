@@ -381,7 +381,7 @@ DEPENDENCIES
   devise
   figaro
   fog
-  fullcalendar-rails (>= 2.6.1.0)
+  fullcalendar-rails (~> 2.6, >= 2.6.1.0)
   jbuilder (~> 2.2.3)
   jquery-rails (= 4.1.1)
   jquery-timepicker-rails
