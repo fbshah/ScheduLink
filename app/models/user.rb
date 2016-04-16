@@ -15,7 +15,7 @@ has_many :events
 
  def full_name
    return first_name + " " + last_name 
-end 
+  end 
 
  acts_as_messageable
 
