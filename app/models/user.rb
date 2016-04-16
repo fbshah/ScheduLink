@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :events
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
+         :recoverable, :rememberable, :trackable, :validatable,  :lockable, :confirmable
 
  def full_name
    return first_name + " " + last_name 

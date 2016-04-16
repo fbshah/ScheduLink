@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160411220946) do
 
   create_table "admins", force: :cascade do |t|
@@ -59,6 +60,9 @@ ActiveRecord::Schema.define(version: 20160411220946) do
 =======
 ActiveRecord::Schema.define(version: 20160328013334) do
 >>>>>>> master
+=======
+ActiveRecord::Schema.define(version: 20160328013334) do
+>>>>>>> 825983b4578f37233d37f3847623af0511de0e72
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
