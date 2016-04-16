@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-devise_for :users, :controllers => {:registrations => "users/registrations" }
+    devise_for :users, :controllers => {:registrations => "users/registrations" }
+  resources :users
+
     resources :events do
     collection do
       get :get_events
@@ -10,7 +12,6 @@ devise_for :users, :controllers => {:registrations => "users/registrations" }
       post :resize
     end
   end
-  
 
   get 'users/:id/shifts' => 'users#shifts', :as => :user_shifts
   resources :shifts
@@ -20,15 +21,9 @@ devise_for :users, :controllers => {:registrations => "users/registrations" }
   get 'about'   => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
   root 'welcome#index'
-  resources :users
- 
-
-
-
 
   resource :calendar, only: [:show], controller: :calendar
-  
- 
+
 
   resources :users, :controller => "users"
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
