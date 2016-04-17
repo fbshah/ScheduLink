@@ -1,6 +1,64 @@
 <p id="notice"><%= notice %></p>
 
+<script>
+$("#calendar").fullCalendar('removeEvents');
+$("#calendar").fullCalendar('addEventSource', nevent);
+$("#calendar").fullCalendar('rerenderEvents');$("#calendar").fullCalendar('removeEvents');
+$("#calendar").fullCalendar('addEventSource', nevent);
+$("#calendar").fullCalendar('rerenderEvents');
+            $('#calendar').fullCalendar({
 
+    dayClick: function() {
+        alert('a day has been clicked!');
+    }
+        events: [
+        // events here
+    ],
+    editable: true,
+    Boolean, default: true 
+    eventDrop: function(event, delta, revertFunc) {
+        Float, default: .75
+        alert(event.title + " was dropped on " + event.start.format());
+
+        if (!confirm("Are you sure about this change?")) {
+            revertFunc();
+        }
+
+    }
+    eventResize: function(event, delta, revertFunc) {
+
+        alert(event.title + " end is now " + event.end.format());
+
+        if (!confirm("is this okay?")) {
+            revertFunc();
+        }
+
+    }
+    customButtons: {
+        promptResource: {
+          text: '+ room',
+          click: function() {
+            var title = prompt('Room name');
+            if (title) {
+              $('#calendar').fullCalendar(
+                'addResource',
+                { title: title },
+                true // scroll to the new resource?
+              );
+            }
+          }
+        }
+      },
+  });
+  resourceLabelText: 'Rooms',
+      resourceRender: function(resource, cellEls) {
+        cellEls.on('click', function() {
+          if (confirm('Are you sure you want to delete ' + resource.title + '?')) {
+            $('#calendar').fullCalendar('removeResource', resource);
+          }
+        });
+      },
+</script>
 <h1>Staff Rota</h1>
 
 <table>
