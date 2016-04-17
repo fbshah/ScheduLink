@@ -1,131 +1,176 @@
-<p id="notice"><%= notice %></p>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.css' />
-<script src='http://fullcalendar.io/js/fullcalendar-2.6.1/lib/jquery.min.js'></script>
-<script src='http://fullcalendar.io/js/fullcalendar-2.6.1/lib/moment.min.js'></script>
-<script src="http://fullcalendar.io/js/fullcalendar-2.6.1/lib/jquery-ui.custom.min.js"></script>
-<script src='http://fullcalendar.io/js/fullcalendar-2.6.1/fullcalendar.min.js'></script>
-
-    <script>
-
-       $(function() { // document ready
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How to add calendar using jQuery and fullCalendar</title>
+  <!--FullCalendar Dependencies-->
+  <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
+  <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
   
-  $('#calendar').fullCalendar({
-    resourceAreaWidth: 230,
-    now: '2015-08-07',
-    editable: true,
-    aspectRatio: 1.5,
-    scrollTime: '00:00',
-    header: {
-      left: 'promptResource today prev,next',
-      center: 'title',
-      right: 'timelineDay,timelineThreeDays,agendaWeek,month'
-    },
-    customButtons: {
-      promptResource: {
-        text: '+ room',
-        click: function() {
-          var title = prompt('Room name');
-          if (title) {
-            $('#calendar').fullCalendar(
-              'addResource',
-              { title: title },
-              true // scroll to the new resource?
+  <!--jQuery-->
+  <script src='jquery/jquery-1.9.1.min.js'></script>
+  <script src='jquery/jquery-ui-1.10.2.custom.min.js'></script>
+  
+  <!--FullCalendar-->
+  <script src='fullcalendar/fullcalendar.min.js'></script>
+  <script type="text/javascript">
+    
+    /*
+      jQuery document ready
+    */
+    
+    $(document).ready(function()
+    {
+      /*
+        date store today date.
+        d store today date.
+        m store current month.
+        y store current year.
+      */
+      var date = new Date();
+      var d = date.getDate();
+      var m = date.getMonth();
+      var y = date.getFullYear();
+      
+      /*
+        Initialize fullCalendar and store into variable.
+        Why in variable?
+        Because doing so we can use it inside other function.
+        In order to modify its option later.
+      */
+      
+      var calendar = $('#calendar').fullCalendar(
+      {
+        /*
+          header option will define our calendar header.
+          left define what will be at left position in calendar
+          center define what will be at center position in calendar
+          right define what will be at right position in calendar
+        */
+        header:
+        {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        /*
+          defaultView option used to define which view to show by default,
+          for example we have used agendaWeek.
+        */
+        defaultView: 'agendaWeek',
+        /*
+          selectable:true will enable user to select datetime slot
+          selectHelper will add helpers for selectable.
+        */
+        selectable: true,
+        selectHelper: true,
+        /*
+          when user select timeslot this option code will execute.
+          It has three arguments. Start,end and allDay.
+          Start means starting time of event.
+          End means ending time of event.
+          allDay means if events is for entire day or not.
+        */
+        select: function(start, end, allDay)
+        {
+          /*
+            after selection user will be promted for enter title for event.
+          */
+          var title = prompt('Event Title:');
+          /*
+            if title is enterd calendar will add title and event into fullCalendar.
+          */
+          if (title)
+          {
+            calendar.fullCalendar('renderEvent',
+              {
+                title: title,
+                start: start,
+                end: end,
+                allDay: allDay
+              },
+              true // make the event "stick"
             );
           }
-        }
-      }
-    },
-    defaultView: 'timelineDay',
-    views: {
-      timelineThreeDays: {
-        type: 'timeline',
-        duration: { days: 3 }
-      }
-    },
-    resourceLabelText: 'Rooms',
-    resources: [
-      { id: 'a', title: 'Auditorium A' },
-      { id: 'b', title: 'Auditorium B', eventColor: 'green' },
-      { id: 'c', title: 'Auditorium C', eventColor: 'orange' },
-      { id: 'd', title: 'Auditorium D', children: [
-        { id: 'd1', title: 'Room D1' },
-        { id: 'd2', title: 'Room D2' }
-      ] },
-      { id: 'e', title: 'Auditorium E' },
-      { id: 'f', title: 'Auditorium F', eventColor: 'red' },
-      { id: 'g', title: 'Auditorium G' },
-      { id: 'h', title: 'Auditorium H' },
-      { id: 'i', title: 'Auditorium I' },
-      { id: 'j', title: 'Auditorium J' },
-      { id: 'k', title: 'Auditorium K' },
-      { id: 'l', title: 'Auditorium L' },
-      { id: 'm', title: 'Auditorium M' },
-      { id: 'n', title: 'Auditorium N' },
-      { id: 'o', title: 'Auditorium O' },
-      { id: 'p', title: 'Auditorium P' },
-      { id: 'q', title: 'Auditorium Q' },
-      { id: 'r', title: 'Auditorium R' },
-      { id: 's', title: 'Auditorium S' },
-      { id: 't', title: 'Auditorium T' },
-      { id: 'u', title: 'Auditorium U' },
-      { id: 'v', title: 'Auditorium V' },
-      { id: 'w', title: 'Auditorium W' },
-      { id: 'x', title: 'Auditorium X' },
-      { id: 'y', title: 'Auditorium Y' },
-      { id: 'z', title: 'Auditorium Z' }
-    ],
-    resourceRender: function(resource, cellEls) {
-        cellEls.on('click', function() {
-          if (confirm('Are you sure you want to delete ' + resource.title + '?')) {
-            $('#calendar').fullCalendar('removeResource', resource);
+          calendar.fullCalendar('unselect');
+        },
+        /*
+          editable: true allow user to edit events.
+        */
+        editable: true,
+        /*
+          events is the main option for calendar.
+          for demo we have added predefined events in json object.
+        */
+        events: [
+          {
+            title: 'All Day Event',
+            start: new Date(y, m, 1)
+          },
+          {
+            title: 'Long Event',
+            start: new Date(y, m, d-5),
+            end: new Date(y, m, d-2)
+          },
+          {
+            id: 999,
+            title: 'Repeating Event',
+            start: new Date(y, m, d-3, 16, 0),
+            allDay: false
+          },
+          {
+            id: 999,
+            title: 'Repeating Event',
+            start: new Date(y, m, d+4, 16, 0),
+            allDay: false
+          },
+          {
+            title: 'Meeting',
+            start: new Date(y, m, d, 10, 30),
+            allDay: false
+          },
+          {
+            title: 'Lunch',
+            start: new Date(y, m, d, 12, 0),
+            end: new Date(y, m, d, 14, 0),
+            allDay: false
+          },
+          {
+            title: 'Birthday Party',
+            start: new Date(y, m, d+1, 19, 0),
+            end: new Date(y, m, d+1, 22, 30),
+            allDay: false
+          },
+          {
+            title: 'Click for Google',
+            start: new Date(y, m, 28),
+            end: new Date(y, m, 29),
+            url: 'http://google.com/'
           }
-        });
-      },
-    events: [
-      { id: '1', resourceId: 'b', start: '2015-08-07T02:00:00', end: '2015-08-07T07:00:00', title: 'event 1' },
-      { id: '2', resourceId: 'c', start: '2015-08-07T05:00:00', end: '2015-08-07T22:00:00', title: 'event 2' },
-      { id: '3', resourceId: 'd', start: '2015-08-06', end: '2015-08-08', title: 'event 3' },
-      { id: '4', resourceId: 'e', start: '2015-08-07T03:00:00', end: '2015-08-07T08:00:00', title: 'event 4' },
-      { id: '5', resourceId: 'f', start: '2015-08-07T00:30:00', end: '2015-08-07T02:30:00', title: 'event 5' }
-    ]
-  });
+        ]
+      });
+      
+    });
+
+  </script>
+  <style type="text/css">
+    body
+    {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    }
+    #calendar
+    {
+      width: 900px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!--FullCalendar container div-->
+  <div id='calendar'></div>
   
-});
-
-    </script>
-<h1>Staff Rota</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Department</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.department %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'New shift', new_event_path %>
-
-<br> 
-
-<div id="calendar"></div>
+</body>
+</html>
