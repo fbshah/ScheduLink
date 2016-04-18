@@ -14,8 +14,9 @@
  *= require jquery-ui/datepicker
  *= require jquery.timepicker.css
  *= require_self
- *= require fullcalendar
  *= require_tree .
+ *= require fullcalendar
+
 */
 
 @import "bootstrap";

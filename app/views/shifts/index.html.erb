@@ -1,4 +1,10 @@
 <div class="row">
+
+
+<% if can? :manage, :all %>
+<div id="rota"></div>
+<% end %>
+
 	<div class="col-md-12"  id ="shifts" >
 		<h2 id="week">
 			<%= link_to "<", date: @date.prev_week %>

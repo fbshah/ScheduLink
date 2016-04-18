@@ -11,29 +11,29 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require moment
 //= require jquery.turbolinks
-//= require fullcalendar
 //= require jquery.timepicker.js
 //= require jquery-ui/datepicker
 //= require bootstrap-sprockets
+//= require fullcalendar
 //= require turbolinks
 //= require_tree .
 
+
 $(function() {
-  $('.datepicker').datepicker({
-  	 dateFormat: "yy-mm-dd",
-  	 minDate: '0'
-  });
- 
+	$('.datepicker').datepicker({
+  		dateFormat: "yy-mm-dd",
+  		minDate: '0'
+	}); 
 });
 
 $(function(){
-$('.timepicker').timepicker({
-	  datepicker:false,
-  format:'H:i'
-});
+	$('.timepicker').timepicker({
+		datepicker:false,
+  		format:'H:i'
+	});
 });
 
 
