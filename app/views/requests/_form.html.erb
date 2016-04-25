@@ -1,29 +1,23 @@
 
-<%= form_for @shift do |f| %>
-<%= @shift.errors.full_messages.first if @shift.errors.any? %>
-    <%= f.label :user%><br>
-    <%= f.select(:user_id, User.all.collect {|p| [ p.first_name, p.id ] }, {include_blank: false}) %>
+<%= form_for @requests do |f| %>
+
     <div class="field">
     <%= f.label :date %><br>
     <%= f.text_field :date, class: "datepicker"%>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
-    <%= f.datetime_select  :start_time, class: "timepicker" %>
+    <%= f.text_field :start_time, class: "timepicker" %>
   </div>
   <div class="field">
     <%= f.label :end_time %><br>
-    <%= f.datetime_select  :end_time, class: "timepicker"%>
+    <%= f.text_field :end_time, class: "timepicker"%>
   </div>
   <div class="field">
     <%= f.label :department %><br>
     <%= f.text_field :department %>
   </div>
-  <div class="field">
-    <%= f.label :break%><br>
-    <%= f.text_field :break%>
 
-  </div>
   <div class="field">
 
   </div>

@@ -1,40 +1,48 @@
 class ShiftsController < ApplicationController
 load_and_authorize_resource
-  before_filter :authenticate_user!
   before_action :find_shift, only: [:show, :edit, :update, :destroy]
 
   def index 
     @shifts = Shift.all
     @shift = Shift.new
     # @shifts_by_date = @shifts.group_by(&:date)
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @date = params[:start_time] ? Date.parse(params[:start_time]) : Date.today
+    
   end
 
   def show
   end
 
   def new
-    @shift = current_user.shifts.build
+    @shift = Shift.new
   end
 
   def create
     @shift = Shift.new(shift_params)
-    if @shift.save
-    redirect_to @shift
-  else
-    render 'new'
-  end
+    respond_to do |format|
+      if @shift.save
+        format.html { redirect_to @shift, notice: 'Shift was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @shift }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @shift.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
   end
 
   def update
-    if @shift.update(shift_params)
-      redirect_to @shift
-  else
-      render 'edit'
-  end
+    respond_to do |format|
+      if @shift.update(shift_params)
+        format.html { redirect_to @shift, notice: 'Shift was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @shift.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

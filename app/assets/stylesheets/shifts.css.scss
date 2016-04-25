@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 .table { width: 100%; }
 
 
@@ -12,6 +13,17 @@
     color: #FFFFFF;
 }
 
+.calendar.table.table-bordered.table-striped {
+  background-color: black;
+}
+
+.col-md-4{
+  text-align: center;
+}
+
+.hiderow{
+  background-color: black;
+}
 
 .calendar {
   border-collapse: collapse;
@@ -64,6 +76,13 @@
   font-size: 11px;
   padding-left: 20px;
 }
+
+
+
+.fc table {
+    width: 100%;
+    table-layout: auto;
+  }
 
 
 @media screen and (max-width: 800px) {

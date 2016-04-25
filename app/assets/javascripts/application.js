@@ -18,7 +18,6 @@
 //= require jquery-ui/datepicker
 //= require bootstrap-sprockets
 //= require fullcalendar
-//= require turbolinks
 //= require_tree .
 
 

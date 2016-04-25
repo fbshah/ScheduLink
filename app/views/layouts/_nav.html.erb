@@ -19,6 +19,12 @@
         <% if can? :manage, Shift %>
         <li><%= link_to "SLC Rota", shifts_path %></li>
         <% end %>
+        
+       
+        <li><%= link_to "Availabilities", requests_path %></li>
+        
+     
+        
         <% if can? :manage, Event %>
         <li><%= link_to "Staff Rota", events_path %></li>
         <% end %>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "row text-center">
+  <div class = "large-8 large-centered columns">
+    <div id = "show_shifts">
+  <strong>Date:</strong>
+  <%= @request.date %>
+  <p>
+  <strong>Shift Start Time:</strong>
+  <%= @request.start_time %>
+  <p>
+    <strong>Shift End Time:</strong>
+    <%= @request.end_time %>
+  </p>
+  <p>
+    <strong>Department:</strong>
+    <%= @request.department %>
+  </p>
+
+
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_request_path(@request) %> |
+  <%= link_to 'Back', requests_path %> |
+  <%= link_to 'Destroy', @request, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
