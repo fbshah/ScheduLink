@@ -1,67 +1,36 @@
-$(document).ready(function() {
+$(function() { // document ready
 
-            var calendar = $('#calendar').fullCalendar({
-                defaultView: 'timelineDay',
-                    resourceAreaWidth: 230,
-    editable: true,
-    aspectRatio: 1.5,
-    scrollTime: '00:00',
-                header: {
-                    left: 'promptResource prev,next today',
-                    center: 'title',
-                    right: 'month,timelineWeek,timelineDay'
-                        },
-                            customButtons: {
-      promptResource: {
-        text: 'Add employee Name',
-        click: function() {
-          var title = prompt('Enter Name');
-          if (title) {
-            $('#calendar').fullCalendar(
-              'addResource',
-              { title: title },
-              true // scroll to the new resource?
-            );
-          }
+    $('#calendar').fullCalendar({
+      editable: true, // enable draggable events
+      aspectRatio: 1.8,
+      scrollTime: '00:00', // undo default 6am scrollTime
+      header: {
+        left: 'today prev,next',
+        center: 'title',
+        right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+      },
+      defaultView: 'timelineDay',
+      views: {
+        timelineThreeDays: {
+          type: 'timeline',
+          duration: { days: 3 }
+        }
+      },
+      resourceLabelText: 'Rooms',
+
+      resources: { // you can also specify a plain string like 'json/resources.json'
+        url: 'json/resources.json',
+        error: function() {
+          $('#script-warning').show();
+        }
+      },
+
+      events: { // you can also specify a plain string like 'json/events.json'
+        url: 'json/events.json',
+        error: function() {
+          $('#script-warning').show();
         }
       }
-    },
-                    selectable: true,
-                    selectHelper: true,
-
-                select: function(start, end, allDay) {
-                        var title = prompt('Event Title:');
-                        if (title) {
-                            calendar.fullCalendar('renderEvent',
-                            {
-                                title: title,
-                                start: start,
-                                end: end,
-                                allDay: allDay
-                            },
-                            true // make the event "stick"
-                            );
-                            }
-                            calendar.fullCalendar('unselect');
-                        },
-                                editable: true,
-
-                                eventSources: [
-                                    {
-                                            url: '/events.json',
-                                            type: 'GET',
-                                            data: {
-                                                start: 'start',
-                                                end: 'end',
-                                                id: 'id',
-                                                title: 'title',
-                                                allDay: 'allDay'
-                                            },
-                                            error: function () {
-                                                alert('there was an error while fetching events!');
-                                            }
-                                    }
-                            ] 
-
-                    });
-            });
+    });
+  
+  });
