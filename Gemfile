@@ -29,6 +29,7 @@ gem 'time_diff'
 
 
 group :development, :test do
+<<<<<<< HEAD
   gem 'sqlite3',				'1.3.9'
   gem 'byebug',					'3.4.0'
   # gem 'web-console', 		'2.0.0.beta3'
@@ -36,7 +37,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'faker'
-
 end
 
 group :production do 
