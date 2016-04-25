@@ -1,15 +1,23 @@
-<div class="row">
+
 
 
 <% if can? :manage, :all %>
 <div id="rota"></div>
+<%= link_to 'New Shift', new_shift_path %>
 <% end %>
 
-	<div class="col-md-12"  id ="shifts" >
+	<div class="row"  id ="shifts" >
 		<h2 id="week">
+
+			<div class="col-md-4" >
 			<%= link_to "<", date: @date.prev_week %>
+				</div>
+				<div class="col-md-4" >
 			<%= @date.strftime("%B %Y") %>
+			</div>
+			<div class="col-md-4" >
 			<%= link_to ">", date: @date.next_week%>
+			</div>
 		</h2>
 		<% @shifts.group_by(&:user).each do |user, shifts| %>
 			<%= shifts.first.user.full_name %>
@@ -32,8 +40,6 @@
 	</div>
 </div>
 
-<% if can? :manage, :all %>
-  <%= link_to 'New Shift', new_shift_path %>
-<% end %>
+
 
  

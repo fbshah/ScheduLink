@@ -1,21 +1,35 @@
 
-<p><%= f.label :email %><br />
-<%= f.text_field :email %></p>
+<div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: "form-control" %>
+</div>
 
+<div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: "form-control" %>
+</div>
 
+<div class="field">
+<p><%= f.label :email%><br />
+<%= f.text_field :email, class: "form-control" %></p>
+</div>
+
+<div class="field">
 <p><%= f.label :password %><br />
-<%= f.password_field :password %></p>
+<%= f.password_field :password, class: "form-control"  %></p>
+</div>
 
+<div class="field">
 <p><%= f.label :password_confirmation %><br />
-<%= f.password_field :password_confirmation %></p>
-
-<% if can? :manage, :all %>
+<%= f.password_field :password_confirmation, class: "form-control"  %></p>
+</div>
 
 <p><%= f.label :role %>
 <p>
  <%= f.collection_select :role, User::ROLES, :to_s, :humanize, {:include_blank => true} %></p>
  <p><%= f.label :assigned_hours %>
- 	<p>
+ <p>
+ 		
  <%= f.collection_select :assigned_hours, User::HOURS, :to_s, :humanize, {:include_blank => true} %></p>
-<p><%= f.submit "Submit" %></p>
-<% end %>
+
+<p><%= f.submit %></p>

@@ -1,0 +1,41 @@
+
+  <div class = "row">
+
+  	<div class = "col-md-3">
+      <b>Sunday</b>
+  </div>
+  <div class = "col-md-3">
+  </div>
+   <div class = "row">
+      <b>Monday</b>
+  </div>
+     <div class = "row">
+      <b>Tuesday</b>
+      </div>
+       <div class = "row">
+      <b>Wednesday</b>
+      </div>
+       <div class = "row">
+      <b>Thursday</b>
+      </div>
+       <div class = "row">
+      <b>Friday</b>
+      </div>
+       <div class = "row">
+      <b>Saturday</b>
+     </div>
+
+   </div>
+   
+  
+ 
+
+<% @requests.each do |request| %>
+
+	<%= request.date %>
+	<%= request.start_time %>
+	<%= request.end_time %>
+
+<% end %>
+
+<%= link_to 'New Shift', new_request_path %>

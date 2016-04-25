@@ -26,7 +26,9 @@ gem 'momentjs-rails'
 gem 'pry'
 gem 'time_diff'
 
+
 group :development, :test do
+	gem 'factory_girl'
 	gem 'sqlite3',				'1.3.9'
 	gem 'byebug',				'3.4.0'
 	# gem 'web-console', 		'2.0.0.beta3'

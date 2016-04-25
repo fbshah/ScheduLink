@@ -1,4 +1,5 @@
 class Shift < ActiveRecord::Base
+	
 	belongs_to :user
 	validates :date, uniqueness: { scope: :user, message: "has already been taken for this user" }
 	validate :min_two_hour

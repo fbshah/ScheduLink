@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
+ load_and_authorize_resource
 
   def index
     @users = User.all
-    
   end
 
   def shifts
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
         render :action => 'new'
       end
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end
@@ -56,7 +55,7 @@ class UsersController < ApplicationController
 private
 
  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :role, :avatar, :first_name, :last_name, :assigned_hours)
+    params.require(:user).permit(:email, :password, :password_confirmation, :role, :first_name, :last_name, :assigned_hours)
   end
 
 end
