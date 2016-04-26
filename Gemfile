@@ -27,8 +27,12 @@ gem 'pry'
 gem 'time_diff'
 
 
-group :development, :test do
-	gem 'factory_girl'
+gem 'rspec-rails', :group => [:test, :development]
+
+group :test do
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'guard-rspec'
 	gem 'sqlite3',				'1.3.9'
 	gem 'byebug',				'3.4.0'
 	# gem 'web-console', 		'2.0.0.beta3'

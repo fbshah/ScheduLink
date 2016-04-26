@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+validates :first_name, presence: { message: "first name can't be blank" }
+validates_length_of :first_name, within: 2..20, too_long: 'too long', too_short: 'too short'
+validates :last_name, presence: { message: "last name can't be blank" }
+VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+validates :email, presence: {message: "please type email with an @ sign"}, length: { maximum: 255 },
+          format: { with: VALID_EMAIL_REGEX }, 
+          uniqueness: { case_sensitive: false }
+
+
 
   attr_accessor :login
   ROLES = %w[admin slc staff]
