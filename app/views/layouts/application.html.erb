@@ -10,16 +10,19 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "https://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
   <%= javascript_include_tag "https://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
-<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' />
-<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.print.css' rel='stylesheet' media='print' />
-<link href='http://fullcalendar.io/js/fullcalendar-scheduler-1.2.0/lib/fullcalendar.min.css' rel='stylesheet' />
- 
+
+
+  
 
   <%= csrf_meta_tags %>
 
 </head>
 <body>
-
+<Style>
+body {
+  background-color: #CCCCCC;
+}
+</style>
 <%= render 'layouts/nav' %>
 <div class="container">
 <%= render 'layouts/messages' %>
@@ -27,11 +30,9 @@
 <%= yield %>
 
 <%= render 'layouts/footer' %>
-<script src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
-<script src='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.js'></script>
-<script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.2.0/scheduler.js'></script>
-<script src='http://fullcalendar.io/js/fullcalendar-scheduler-2.6.1/lib/fullcalendar.min.js'></script>
-<script src='http://fullcalendar.io/js/fullcalendar-scheduler-2.6.1/scheduler.min.js'></script>
+    <script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/lib/moment.min.js'></script>
+    <script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/lib/fullcalendar.min.js'></script>
+    <script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/scheduler.min.js'></script>
 </body>
 
 </html>

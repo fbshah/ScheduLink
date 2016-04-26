@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160419024325) do
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "date"
   end
 
   create_table "fullcalendar_engine_event_series", force: :cascade do |t|

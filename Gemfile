@@ -9,7 +9,7 @@ gem 'coffee-rails', 			'4.1.0'
 gem 'jquery-rails', 			'4.0.5'
 gem 'turbolinks',				'2.3.0'
 gem 'jbuilder', 				'~> 2.2.3'
-gem 'devise'
+gem 'devise', '~> 3.5', '>= 3.5.8'
 gem 'sdoc', 					'~> 0.4.0', group: :doc
 gem 'bootstrap-sass', 			'~> 3.3.6'
 gem 'mailboxer'
@@ -36,6 +36,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'faker'
+end
 
 group :production do 
 	gem 'pg',					'0.17.1'

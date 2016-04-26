@@ -32,6 +32,7 @@
 @import "shifts.css.scss";
 @import "users.css.scss";
 @import "users.css.scss";
+@import "events.css.scss";
 
 
 /* footer  *= require fullcalendar_engine/application
@@ -40,7 +41,7 @@
 .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
     margin-right: -15px;
     margin-left: -15px;
-    background-color: #3366CC;
+    background-color: #191970;
 }
 .footer {
    position:fixed;
@@ -48,7 +49,7 @@
    bottom:0px;
    height:80px;
    width:100%;
-   background:#999;
+   background: #191970;
    color:#FFF;
 }
 
@@ -108,8 +109,9 @@ footer ul li {
 
 .navbar-collapse.collapse {
 
-    background-color: #3366CC;
+    background-color: #191970;
     color: #FFFFFF;
+    padding-bottom: 50pc;
 }
 
 .container-fluid .navbar-brand {
@@ -118,7 +120,7 @@ footer ul li {
 
 
 nav.navbar-nav.navbar-right li a:hover{
-  color: #3366CC;
+  color: #191970;
 }
 
 
@@ -158,6 +160,89 @@ color:black;
   
 
 .nav.navbar-nav.navbar-right li a:hover{
-  color: #3366CC;
+  color: #191970;
 }
 
+
+.fc table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    }
+
+    /* login screen */
+.login-page-box {
+    display: table;
+    width: 100%;
+}
+.login-page-box .table-wrapper {
+    display: table-row;
+    background-color: #191970;
+}
+
+.login-box {
+    display: table-cell;
+    margin: 0;
+    color: #777;
+    background-color: #f4f3f1;
+    padding: 20px 50px 45px 50px;
+    width: 75%;
+    box-sizing: border-box;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.login-box h2 {
+    color: #191970;
+}
+.login-box input[type="text"],
+.login-box input[type="password"]
+.login-box input[type="email"] {
+    font-family: Arial, sans-serif;
+    color: #191970;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    /*text-transform: uppercase;*/
+}
+.login-box input[type="submit"] {
+    color: #191970;
+    background-color: transparent;
+    border: 2px solid #191970;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    text-transform: uppercase;
+}
+.login-box input[type="submit"]:hover {
+    color: #fff;
+    border-color: #191970;
+    background-color: #191970;
+}
+.login-box .remember-me-label {
+    display: block;
+    margin-bottom: 10px;
+}
+.login-box .link-forgot-my-password {
+    display: block;
+    text-align: right;
+}
+.login-box .link-forgot-my-password a {
+    color: #777;
+    text-decoration: none;
+}
+.login-box .link-forgot-my-password a:hover {
+    text-decoration: underline;
+}
+.login-box ::-webkit-input-placeholder { color: #777; opacity: 0.5; }
+.login-box ::-moz-placeholder { color: #777; opacity: 0.5; }
+.login-box :-ms-input-placeholder { color: #777; opacity: 0.5; }
+.login-box input:-moz-placeholder { color: #777; opacity: 0.5; }
+
+body {
+  background-color: #CCCCCC;
+}
