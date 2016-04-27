@@ -12,12 +12,19 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+<<<<<<< HEAD
 require 'factory_girl_rails'
 
+=======
+>>>>>>> upstream/master
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -64,10 +71,13 @@ RSpec.configure do |config|
   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
   config.disable_monkey_patching!
 
+<<<<<<< HEAD
   # This setting enables warnings. It's recommended, but in some cases may
   # be too noisy due to issues in dependencies.
   config.warnings = true
 
+=======
+>>>>>>> upstream/master
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
   # individual spec file.
@@ -95,7 +105,10 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+<<<<<<< HEAD
 config.include FactoryGirl::Syntax::Methods
 
 
+=======
+>>>>>>> upstream/master
 end

@@ -7,7 +7,7 @@ class Ability
 		  		can :manage, :all
 		    elsif
 		  		if user.role == "slc"
-		  		can :manage, Shift
+		  		can :read, Shift
 		  	else
 		  		if user.role == "staff"
 		  		can :manage, Event
